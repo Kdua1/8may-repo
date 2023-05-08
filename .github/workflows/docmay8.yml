@@ -1,0 +1,27 @@
+name: Build Docker image
+
+on: push
+  
+jobs:
+  push_to_registry:
+    name: Push Docker image to Docker Hub
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        name: Check out repo
+
+      - uses: docker/login-action@v2
+        name: login to docker Hub 
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+    
+      - uses: docker/build-push-action@v4
+        name: Build & push Docker image
+        with:
+          image: kdua1/may-image
+          registry: dockerfile.io
+          context: Dockerfilefolder/
+          Dockerfile: Dockerfile
+          tag: kdua1/kwakudua:latest
+     \
