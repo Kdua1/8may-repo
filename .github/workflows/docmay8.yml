@@ -1,6 +1,7 @@
  name: Build Docker image
 
  on: push
+ 
  jobs:
     push_Docker_image_to_Docker_Hub:
     runs-on: ubuntu-latest
