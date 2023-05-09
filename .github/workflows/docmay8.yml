@@ -6,7 +6,7 @@
   push_Docker_image_to_Docker_Hub:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1.0
+      - uses: actions/checkout@v1
         name: Check out code
 
       - uses: mr-smithers-excellent/docker-build-push@v3
