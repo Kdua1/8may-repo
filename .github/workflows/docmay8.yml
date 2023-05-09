@@ -22,5 +22,5 @@
           registry: dockerfile.io
           context: Dockerfilefolder/
           Dockerfile: Dockerfile
-          tag: kdua1/kwakudua:latest
+          tag: latest
      
